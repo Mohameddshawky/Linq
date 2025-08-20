@@ -1,8 +1,9 @@
 ﻿
 
+using System.Collections.Immutable;
 using System.Security.Cryptography;
-using static Linq1.ListGenrator;
-namespace Linq1
+using static Linq.ListGenrator;
+namespace Linq
 {
     internal class Program
     {
@@ -15,7 +16,43 @@ namespace Linq1
             }
         }
         static void Main()
-        {
+        {  
+            #region Assignment
+            //1
+            //var res = ProductsList.Where(x => x.UnitsInStock == 0);
+            //Print(res);
+
+            //2
+            //var res = ProductsList.Where(x => x.UnitsInStock >= 0&&x.UnitPrice>3);
+            //Print(res);
+
+
+            //3
+            //var res = ProductsList.Where(x => x.UnitsInStock == 0).FirstOrDefault();
+            //Console.WriteLine(res);
+
+            //4
+            //var res = ProductsList.FirstOrDefault(x => x.UnitPrice > 1000);
+            //Console.WriteLine(res);
+
+            //5
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var res = Arr.Where(x => (x & 1) == 1);
+            //Print(res);
+            //6
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //Console.WriteLine(Arr.Count());
+            //7
+            //string[] dictionary = File.ReadAllLines("dictionary_english.txt");
+            //Console.WriteLine(dictionary.Length);
+
+            //8
+            //string[] dictionary = File.ReadAllLines("dictionary_english.txt");
+            //var res = dictionary.OrderBy(x => x.Length).First().Length;
+            //Console.WriteLine(res); 
+            #endregion
+
+            #region Demo
             #region var-dynamic
             //var s = "mohamed";//can detect data type on initiale value[compile time]
             //                  //var v;//invalid
@@ -170,7 +207,6 @@ namespace Linq1
             //var ans2 = ListGenrator.ProductsList.OrderByDescending(x => x.UnitPrice).First();
             //Console.WriteLine(ans2); 
             #endregion
-
             #region filteration operation
             //filteration operation [deffered execution]
             //var res = ProductsList.Where(x => x.UnitsInStock == 0);//will execute when use it
@@ -195,7 +231,6 @@ namespace Linq1
             //} 
 
             #endregion
-
             #region Select
             //var res = ProductsList.Select(x => x.ProductName);
             //Print(res);
@@ -245,7 +280,6 @@ namespace Linq1
             //    });
             //Print(res); 
             #endregion
-
             #region Ordering
             //var res = ProductsList.OrderBy(x => x.ProductName);
             //Print(res);
@@ -304,7 +338,9 @@ namespace Linq1
             //first==>top1
             //single==>top2 
             #endregion
+            #endregion
 
+       
         }
     }
 }
