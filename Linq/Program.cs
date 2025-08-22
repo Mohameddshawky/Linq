@@ -1,5 +1,4 @@
 ﻿
-
 using System.Collections.Immutable;
 using System.Security.Cryptography;
 using static Linq.ListGenrator;
@@ -16,7 +15,7 @@ namespace Linq
             }
         }
         static void Main()
-        {  
+        {
             #region Assignment
             //1
             //var res = ProductsList.Where(x => x.UnitsInStock == 0);
@@ -338,9 +337,50 @@ namespace Linq
             //first==>top1
             //single==>top2 
             #endregion
+
+            #region aggregate operation
+            //aggregate operation
+            //var res = ProductsList.Count();//o(1)if has prop of count
+            //Console.WriteLine(res);
+
+            // res=ProductsList.Count(X=>X.UnitsInStock==0);//O(N)
+            //Console.WriteLine(res);
+            //var res2 = ProductsList.LongCount();//for big value
+            //Console.WriteLine(  res2);
+
+            //var res = ProductsList.TryGetNonEnumeratedCount(out int cnt);
+            //Console.WriteLine($"{res}  {cnt}");
+
+            //IEnumerable<int> l = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            //var ll=l.Where(x => x %2== 0);
+            //var res = ll.TryGetNonEnumeratedCount(out int cnt);
+            //Console.WriteLine($"{res}  {cnt}");//cant get the count
+
+            //var res = ProductsList.Sum(x => x.UnitPrice);//for number only
+            //Console.WriteLine(res);
+            //res=ProductsList.Average(x => x.UnitPrice);
+            //Console.WriteLine(res);
+
+            //var res = ProductsList.MaxBy(x=>x.UnitPrice);//return object with max price
+            //Console.WriteLine(res);
+            //var res = ProductsList.Max(x => x.UnitPrice);//return  max price
+            //Console.WriteLine(res);
+
+            //aggregate
+            //List<string> n = ["mariem", "mohamed", "shawky"];
+            //var res=n.Aggregate((s1,s2)=>$"{s1} {s2}");
+            //Console.WriteLine(res);
+
+            //var res = n.Aggregate("i love", (s1, s2) => $"{s1} {s2}");
+            //Console.WriteLine(  res);
+
+            //var res = n.Aggregate("i love", (s1, s2) => $"{s1} {s2}",(r)=>r.ToUpper());
+            //Console.WriteLine(  res); 
             #endregion
 
-       
+            #endregion
+
+
         }
     }
 }
