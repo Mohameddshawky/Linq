@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Immutable;
 using System.Security.Cryptography;
+using System.Threading;
 using static Linq.ListGenrator;
 namespace Linq
 {
@@ -17,23 +18,28 @@ namespace Linq
         static void Main()
         {
             #region Assignment
+            #region Restriction Operators><
             //1
             //var res = ProductsList.Where(x => x.UnitsInStock == 0);
             //Print(res);
 
             //2
             //var res = ProductsList.Where(x => x.UnitsInStock >= 0&&x.UnitPrice>3);
-            //Print(res);
+            //Print(res); 
+            #endregion
 
 
+            #region Element Operators
             //3
             //var res = ProductsList.Where(x => x.UnitsInStock == 0).FirstOrDefault();
             //Console.WriteLine(res);
 
             //4
             //var res = ProductsList.FirstOrDefault(x => x.UnitPrice > 1000);
-            //Console.WriteLine(res);
+            //Console.WriteLine(res); 
+            #endregion
 
+            #region Aggregate Operators
             //5
             //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             //var res = Arr.Where(x => (x & 1) == 1);
@@ -49,6 +55,53 @@ namespace Linq
             //string[] dictionary = File.ReadAllLines("dictionary_english.txt");
             //var res = dictionary.OrderBy(x => x.Length).First().Length;
             //Console.WriteLine(res); 
+
+            //9
+
+
+            //10
+
+
+            //11
+
+
+            //12 
+            #endregion
+
+
+
+            #region Ordering Operators
+            //13
+            //var res = ProductsList.OrderBy(x => x.ProductName);
+            //Print(res);
+
+            //14
+            //var res = ProductsList.OrderByDescending(x => x.UnitsInStock);
+            //Print(res);
+
+            //15
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var res = Arr.OrderBy(x => x.Length).ThenBy(x => x);
+            //Print(res);
+
+            //16
+            //var res = ProductsList.OrderBy(x => x.Category).ThenByDescending(x => x.UnitPrice);
+            //Print(res); 
+
+            //17
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var res = Arr.OrderBy(x => x.Length).ThenByDescending(x => x);
+            //Print(res);         
+
+            //18
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var res = Arr.Select((x,i)=>new { x,i }).Where(x => x.x[1]=='i').Select(x=>x.i).Reverse();
+            //Print(res); 
+            #endregion
+
+
+
+
             #endregion
 
             #region Demo
@@ -402,6 +455,7 @@ namespace Linq
             //Print(l); 
             #endregion
 
+            #region generation operation
             //generation operation
             //dont work in existing collection [create a sequence]
 
@@ -416,6 +470,37 @@ namespace Linq
 
             //var res=Enumerable.Empty<int>().ToList();
             //Console.WriteLine(res.Count);
+
+            #endregion
+
+            #region quntifiers op
+            //quntifiers op
+            // any check if exist one element in seq
+            //var res = ProductsList.Any();
+            //Console.WriteLine(res);
+
+            //var res = ProductsList.Any(p=>p.UnitsInStock>1);
+            //Console.WriteLine(res);
+
+            //all check all element match the condition
+            //var res = ProductsList.All(p => p.UnitsInStock > 0);
+            //Console.WriteLine(res);
+
+            //contains check if the item in the seq
+
+            //sequence equal must same oerder 
+            #endregion
+
+            #region Zip
+            // List<string> l = ["one", "two", "three", "four"];
+            // int[] arr = { 1, 2, 3, 4,5 };
+            //// var res=l.Zip(arr); //take min length 
+            // //Print(res);
+
+            // char[] arr2 = { 'o', 't', 't', 'f' };
+            // var res = l.Zip(l, arr2);
+            // Print(res);  
+            #endregion
 
             #endregion
 
