@@ -378,6 +378,45 @@ namespace Linq
             //Console.WriteLine(  res); 
             #endregion
 
+            #region casting operator
+            //casting operator [immediate execution]
+            //List<Product> l = ProductsList.Where(p => p.UnitsInStock == 0).ToList();
+            //Print<Product>(l);
+            //Console.WriteLine(l.Count);
+
+            //Product[]l = ProductsList.Where(p => p.UnitsInStock == 0).ToArray();
+            // Print<Product>(l);
+            // Console.WriteLine(l.Length);
+
+            //Dictionary<long,Product >l= ProductsList.Where(p => p.UnitsInStock == 0).
+            //    ToDictionary(p => p.ProductID);
+            //Print(l);
+
+            //Dictionary<long,string> l = ProductsList.Where(p => p.UnitsInStock == 0).
+            //    ToDictionary(p => p.ProductID,p=>p.ProductName);
+            //Print(l);
+
+            //Dictionary<string, Product> l = ProductsList.Where(p => p.UnitsInStock == 0).
+            //    ToDictionary(p => p.ProductName, EqualityComparer<string>.Create((x, y) => x.ToLower().Equals(y.ToLower()),
+            //   (ob) => ob.ToLower().GetHashCode()));
+            //Print(l); 
+            #endregion
+
+            //generation operation
+            //dont work in existing collection [create a sequence]
+
+            //var res = Enumerable.Range(0, 100);
+            //Print<int>(res);
+
+            //var res = Enumerable.Range(0, 100).Select(i=>new Product { ProductID=i,Category="meat"});
+            //Print(res);
+
+            //var res = Enumerable.Repeat("mariem", 100);
+            //Print(res);
+
+            //var res=Enumerable.Empty<int>().ToList();
+            //Console.WriteLine(res.Count);
+
             #endregion
 
 
