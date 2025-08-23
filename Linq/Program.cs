@@ -99,9 +99,40 @@ namespace Linq
             //Print(res); 
             #endregion
 
+            #region Transformation Operators
+            //19
+            //var res = ProductsList.Select(x => x.ProductName);
+            //Print(res); 
 
+            //20
+            //string[] words = { "aPPLE", "BLUeBeRrY", "cHeRry" };
+            //var res = words.Select(x => new
+            //{
+            //    upper=x.ToUpper(),
+            //    lower=x.ToLower(),
+            //});
+            //Print(res); 
 
+            //21
+            //int[] numA = [0, 2, 4, 5, 6, 8, 9];
+            //int[] numb = [1,2,5,7,8];
 
+            //var res = from o in numA
+            //          from x in numb
+            //          where o < x
+            //          select new
+            //          {
+            //              result = $"{o} is less than {x}"
+            //          };
+            //Print (res);
+
+            //22
+            //var res=from o in CustomersList
+            //        from x in o.Orders
+            //        where x.Total<500
+            //        select x;   
+            //Print(res); 
+            #endregion
             #endregion
 
             #region Demo
