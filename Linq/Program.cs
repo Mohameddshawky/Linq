@@ -58,18 +58,44 @@ namespace Linq
             //Console.WriteLine(res); 
 
             //9
-
+            //var res = ProductsList.GroupBy(x => x.Category).Select(x => new
+            //{
+            //    Category=x.Key,
+            //    Count=x.Count()
+            //});
+            //Print(res);
 
             //10
-
+            //var res = from o in ProductsList
+            //          group o by o.Category
+            //        into g
+            //          select new
+            //          {
+            //              Category=g.Key,
+            //              MinPrice = g.Min(x => x.UnitPrice)
+            //          };
+            //Print(res);
 
             //11
-
+            //var res = from p in ProductsList
+            //          group p by p.Category into g
+            //          let mn = g.Min(x => x.UnitPrice)
+            //          from prod in g
+            //          where prod.UnitPrice == mn
+            //          select prod;
+            //        Print(res);
 
             //12 
+            //var res = from o in ProductsList
+            //          group o by o.Category
+            //        into g
+            //          select new
+            //          {
+            //              Category = g.Key,
+            //              Average = g.Average(x => x.UnitPrice)
+            //          };
+            //Print(res);
             #endregion
-
-
 
             #region Ordering Operators
             //13
@@ -133,6 +159,103 @@ namespace Linq
             //        where x.Total<500
             //        select x;   
             //Print(res); 
+            #endregion
+
+            #region  Set Operators
+            //23
+            //var res=ProductsList.Select(x => x.ProductName).Distinct();
+            //Print(res);
+
+
+            //24
+            //var seq = ProductsList.Select(x => x.ProductName[0]);
+            //var seq2 = CustomersList.Select(x => x.CustomerName[0]);
+            //var res=seq.Union(seq2);    
+            //Print(res);         
+
+            //25
+            //var seq = ProductsList.Select(x => x.ProductName[0]);
+            //var seq2 = CustomersList.Select(x => x.CustomerName[0]);
+            //var res = seq.Intersect(seq2);
+            //Print(res);
+
+            //26
+            //var seq = ProductsList.Select(x => x.ProductName[0]);
+            //var seq2 = CustomersList.Select(x => x.CustomerName[0]);
+            //var res = seq.Except(seq2);
+            //Print(res); 
+            #endregion
+
+            #region Partitioning Operators
+            //27
+            //var res=CustomersList.Where(x => x.Region=="WA").SelectMany(x=>x.Orders).Take(3);
+            //Print(res);
+
+            //28
+            //var res = CustomersList.Where(x => x.Region == "WA").SelectMany(x => x.Orders).Skip(2);
+            //Print(res);
+
+
+            //29
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var res = numbers.TakeWhile((x, i) => x > i);
+            //Print(res);
+
+            //30
+            //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var res=numbers.SkipWhile(x => x%3!= 0);
+            //Print(res); 
+            #endregion
+
+            #region Quantifiers
+            //31
+            //string[] dictionary = File.ReadAllLines("dictionary_english.txt");
+            //var res = dictionary.Any(x => x.Contains("ei"));
+            //Console.WriteLine(res);
+
+            //32
+            //var res = from x in ProductsList                    
+            //          group x by x.Category
+            //          into g
+            //          where g.Any(x=>x.UnitsInStock==0)
+            //           select new
+            //          {
+            //              Category = g.Key,
+            //              Products = g
+            //          };
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Category);
+            //    Print(item.Products);
+            //}
+
+            //33
+            //var res = from x in ProductsList
+            //          group x by x.Category
+            //          into g
+            //          where g.All(x => x.UnitsInStock > 0)
+            //          select new
+            //          {
+            //              Category = g.Key,
+            //              Products = g
+            //          };
+            //foreach (var item in res)
+            //{
+            //    Console.WriteLine(item.Category);
+            //    Print(item.Products);
+            //} 
+            #endregion
+
+
+            #region Grouping Operators
+            //34
+            //string[] dictionary = File.ReadAllLines("dictionary_english.txt");
+            //var res = from o in dictionary
+            //          group o by o[0];
+            //foreach (var item in res) {
+            //    Console.WriteLine(item.Key);
+            //    Print(item);
+            //} 
             #endregion
             #endregion
 
@@ -604,6 +727,7 @@ namespace Linq
             #endregion
 
 
+            #region let into
             //let into
 
             //aeiouAEIOU    
@@ -623,8 +747,9 @@ namespace Linq
             //Print(res);
 
             //new in .net 9
-            //count by
-            
+            //count by 
+            #endregion
+
             #endregion
 
 
