@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Immutable;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Threading;
 using static Linq.ListGenrator;
 namespace Linq
@@ -532,7 +533,98 @@ namespace Linq
             // var res = l.Zip(l, arr2);
             // Print(res);  
             #endregion
+            #region grouping
 
+            //grouping
+
+            //var res = from o in ProductsList
+            //          group o by o.Category;
+            //foreach (var item in res)//outer loop iterate over category
+            //{
+            //    Console.WriteLine(item.Key);
+            //    Print(item);
+            //}
+
+            //var res = from x in ProductsList
+            //          where x.UnitsInStock > 0
+            //          group x by x.Category
+            //          into ProGroup//start new query
+            //          where ProGroup.Count() > 10
+            //          select new
+            //          {
+            //              category = ProGroup.Key,
+            //              count = ProGroup.Count(),
+            //          };
+            //Print(res);
+
+            //var res = ProductsList.GroupBy(x => x.Category, p => p.ProductName);
+
+            //foreach (var item in res)//outer loop iterate over category
+            //{
+            //    Console.WriteLine(item.Key+":\n");
+            //    Print(item);
+            //}
+
+            //var res = ProductsList.GroupBy(x => x.Category, (key, p) => new { key, Count = p.Count() });
+
+            //Print(res);
+
+            //Chunk
+            //divide array in same size bucket 
+            #endregion
+
+            #region partitioning operators
+            //partitioning operators
+
+            //var res = ProductsList.Take(3);
+            //Print(res); 
+
+            //var res = ProductsList.Where(x=>x.UnitsInStock==0).Take(3);
+            //Print(res);
+
+            //var res = ProductsList.TakeLast(3);
+            //Print(res);
+
+            // var res=ProductsList.Take(new Range(1, 10));   
+            //Print(res);
+
+            //var res = ProductsList.Skip(12);
+            //Print(res);
+
+            //pagination
+            //int pageSize = 10; int pageinx = 4;
+            //var res=ProductsList.Skip(pageSize*(pageinx-1)).Take(pageSize);
+            //Print(res);
+
+            //var res=ProductsList.TakeWhile(x => x.UnitsInStock>0);
+            //Print(res);
+
+            //var res = ProductsList.SkipWhile(x => x.UnitsInStock > 0);
+            //Print(res); 
+            #endregion
+
+
+            //let into
+
+            //aeiouAEIOU    
+            //string[] n = ["mahmoud", "ali", "shawky", "mariem"];
+            //var res = from o in n
+            //          select Regex.Replace(o, "[aeiouAEIOU]", string.Empty)
+            //          into nonvowel
+            //          where nonvowel.Length>3
+            //          select nonvowel;              
+            //Print(res);
+
+            //string[] n = ["mahmoud", "ali", "shawky", "mariem"];
+            //var res = from o in n
+            //          let nonvowel=  Regex.Replace(o, "[aeiouAEIOU]", string.Empty)              
+            //          where nonvowel.Length > 3
+            //          select nonvowel;
+            //Print(res);
+
+            //new in .net 9
+            //count by
+            
             #endregion
 
 
